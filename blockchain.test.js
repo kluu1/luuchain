@@ -29,7 +29,7 @@ describe('Blockchain', () => {
       it('returns false', () => {
         blockchain.chain[0] = { data: 'not-genesis' };
 
-        expect(blockchain.isValidChain(blockchain.chain)).toBe(false);
+        expect(Blockchain.isValidChain(blockchain.chain)).toBe(false);
       });
     });
 
@@ -45,7 +45,7 @@ describe('Blockchain', () => {
           // Modify hash on chain at index 2
           blockchain.chain[2].lastHash = 'broken-lastHash';
 
-          expect(blockchain.isValidChain(blockchain.chain)).toBe(false);
+          expect(Blockchain.isValidChain(blockchain.chain)).toBe(false);
         });
       });
 
@@ -54,13 +54,13 @@ describe('Blockchain', () => {
           // Modify data on chain at index 2
           blockchain.chain[2].data = 'bad-and-evil-data';
 
-          expect(blockchain.isValidChain(blockchain.chain)).toBe(false);
+          expect(Blockchain.isValidChain(blockchain.chain)).toBe(false);
         });
       });
 
       describe('and the chain does not contain invalid blocks', () => {
         it('returns true', () => {
-          expect(blockchain.isValidChain(blockchain.chain)).toBe(true);
+          expect(Blockchain.isValidChain(blockchain.chain)).toBe(true);
         });
       });
     });

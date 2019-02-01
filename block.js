@@ -1,8 +1,8 @@
 const { GENESIS_DATA } = require('./config');
+const cryptoHash = require('./crypto-hash');
 
 class Block {
-  // Wrapped {} around args, so you don't have to worry
-  // about arg orders later on when creating new blocks
+  // Properties of a Block
   constructor({ timestamp, lastHash, hash, data }) {
     this.timestamp = timestamp;
     this.lastHash = lastHash;
@@ -10,8 +10,22 @@ class Block {
     this.data = data;
   }
 
+  // Method to create a genesis block
   static genesis() {
     return new this(GENESIS_DATA);
+  }
+
+  // Method to create a new block
+  static mineBlock({ lastBlock, data }) {
+    const timestamp = Date.now();
+    const lastHash = lastBlock.hash;
+
+    return new this({
+      timestamp,
+      lastHash,
+      data,
+      hash: cryptoHash(timestamp, lastHash, data)
+    });
   }
 }
 

@@ -1,5 +1,5 @@
 # LuuChain
-LuuChain is a blockchain project built with Node.js and React.js to deep dive into how cryptocurrencies are built on the blockchain. I followed the TDD process uisng Jest from the very beginning of this project.
+LuuChain is a blockchain project built with Node.js and React.js to deep dive into how cryptocurrencies are built on a blockchain. TDD process is used with Jest from the beginning of the project.
 
 ## Blockchain 101 - Cliff Notes
 * The very first block in the blockchain is called the Genesis block
@@ -8,3 +8,4 @@ LuuChain is a blockchain project built with Node.js and React.js to deep dive in
 * The difficulty to mine a block rises as more miners are added to the network and more computational power is devoted to the system. 
 * The "difficulty" settings keeps the rate of blocks being added to the blockchain at a steady rate (eg. 10 minutes to mine a block)
 * A "nonce" is used to make difficult to generate a valid hash for a given block, as miners must find a nonce value that,when plugged into the hashing algorithm, generates an output that meets certain requirements (a certain number of leading zeros).
+

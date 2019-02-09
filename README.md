@@ -1,6 +1,6 @@
 # luuchain
 
-## Notes
+## Blockchain 101 - Cliff Notes
 * The very first block in the blockchain is called the Genesis block
 * All new blocks will have reference to the last hash of the last block, creating a chain, hence "blockchain"
 * A block has (can have more) of the following properties: timestamp, lasthash, hash, data, nonce, and difficulty

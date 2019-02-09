@@ -1,5 +1,5 @@
 # LuuChain
-LuuChain is a blockchain project built with Node.js and React.js to deep dive into how cryptocurrencies are built on the blockchain.
+LuuChain is a blockchain project built with Node.js and React.js to deep dive into how cryptocurrencies are built on the blockchain. I followed the TDD process uisng Jest from the very beginning of this project.
 
 ## Blockchain 101 - Cliff Notes
 * The very first block in the blockchain is called the Genesis block

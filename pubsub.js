@@ -36,8 +36,14 @@ class PubSub {
     });
   }
   
+  // make sure publisher do now send consequential message
+  // to the same local subscriber
   publish({ channel, message }) {
-    this.publisher.publish(channel, message);
+    this.subscriber.unsubscribe(channel, () => {
+      this.publisher.publish(channel, message, () => {
+        this.subscriber.subscribe(channel);
+      });
+    });
   }
 
   broadcastChain() {

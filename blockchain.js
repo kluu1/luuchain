@@ -47,6 +47,8 @@ class Blockchain {
       // Validates the last hash is correct
       const actualLastHash = chain[i - 1].hash;
 
+      const lastDifficulty = chain[i-1].difficulty;
+
       if (lastHash !== actualLastHash) return false;
 
       // Validates the hash
@@ -59,6 +61,8 @@ class Blockchain {
       );
 
       if (hash !== validatedHash) return false;
+
+      if (Math.abs(lastDifficulty - difficulty) > 1) return false;
     }
 
     return true;
